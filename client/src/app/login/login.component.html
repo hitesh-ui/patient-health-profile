@@ -1,0 +1,22 @@
+<!-- <h4 *ngIf="error" style="color:red;">{{error}}</h4> -->
+<style>
+  .red{
+    border-color: red;
+  }
+  .remove{
+    border-color: auto;
+  }
+</style>
+<form (ngSubmit)="submit()">
+  <div class="form-group col-3">
+    <label for="username">Email</label>
+    <input type="text" name="username" class="form-control" [ngClass]="error ? 'red' : 'remove'" [(ngModel)]="username" />
+  </div>
+  <div class="form-group col-3">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" [ngClass]="error ? 'red' : 'remove'" [(ngModel)]="password" />
+  </div>
+  <div class="form-group col-3">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form>
